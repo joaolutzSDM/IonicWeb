@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+
+    <ion-title>Filmes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-searchbar [(ngModel)]="termoDeBusca" (ionChange)="consultaFilmesAssincrona($event)"></ion-searchbar>
+ 
+  
+    <ion-list>
+      <ion-item button *ngFor="let item of (resultado | async)" [routerLink]="['/', 'filme-detalhe', item.imdbID]">
+        <ion-avatar slot="start">
+          <img [src]="item.Poster" *ngIf="item.Poster != 'N/A'">
+        </ion-avatar>
+   
+        <ion-label text-wrap>
+          <h3>{{ item.Title }}</h3>
+          {{ item.Year }}
+        </ion-label>
+   
+        <ion-icon slot="end" *ngIf="item.Type == 'movie'" name="videocam"></ion-icon>
+        <ion-icon slot="end" *ngIf="item.Type == 'series'" name="tv"></ion-icon>
+        <ion-icon slot="end" *ngIf="item.Type == 'game'" name="logo-game-controller-b"></ion-icon>
+   
+      </ion-item>
+   
+    </ion-list>
+</ion-content>

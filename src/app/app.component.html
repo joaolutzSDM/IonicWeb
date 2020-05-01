@@ -1,3 +1,49 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+
+  <ion-menu side="start">
+
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          Trabalho Final
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/home">
+            <ion-icon name="home" slot="start"></ion-icon>
+            <ion-label>Home</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/receitas">
+              <ion-icon name="pizza" slot="start"></ion-icon>
+              <ion-label>Receitas</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/filmes">
+            <ion-icon name="videocam" slot="start"></ion-icon>
+            <ion-label>Filmes</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/fipe">
+            <ion-icon name="car" slot="start"></ion-icon>
+            <ion-label>Marcas (Fipe)</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet main></ion-router-outlet>
 </ion-app>

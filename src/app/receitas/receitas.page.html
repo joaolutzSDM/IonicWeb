@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+
+    <ion-title>receitas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <!-- Se esse link não funcionar, tente o debaixo. É um bug com caminho relativo-->
+        <ion-item *ngFor="let receita of receitas" [routerLink]="['./',receita.id]">
+        <!--ion-item *ngFor="let receita of receitas" [routerLink]="['/receitas',receita.id]"-->
+
+
+          <ion-avatar slot="start">
+              <ion-img [src]="receita.imagemUrl"></ion-img>
+          </ion-avatar>
+
+          <ion-label>
+              {{ receita.titulo}}
+          </ion-label>
+
+        </ion-item> 
+
+    </ion-list>
+</ion-content>
+
+
